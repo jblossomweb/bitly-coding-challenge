@@ -1,10 +1,10 @@
 import React from 'react';
-import DarkCentered from 'app/components/templates/DarkCentered';
+import BitlyFoundation from 'app/components/templates/BitlyFoundation';
 
 const NotFound: React.FC = () => (
-  <DarkCentered>
+  <BitlyFoundation>
     <p>Sorry! That page was not found.</p>
-  </DarkCentered>
+  </BitlyFoundation>
 );
 
 export default NotFound;

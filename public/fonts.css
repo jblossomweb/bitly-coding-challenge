@@ -1,0 +1,15 @@
+@font-face {
+  font-family:"Proxima Nova";
+  src: url("./ProximaNova.otf");
+}
+
+@font-face{
+  font-family:"Proxima Nova Semibold";
+  src: url("./ProximaNovaSemiBold.otf");
+}
+
+@font-face {
+  font-family:"Bitly Icon";
+  src: url("./BitlyIcons.woff") format("woff"),
+       url("./BitlyIcons.ttf") format("ttf");
+}

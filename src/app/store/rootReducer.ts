@@ -2,11 +2,11 @@ import extend from 'lodash/extend';
 import { AppReducers, combineAllReducers } from 'core/store';
 
 // import your reducers here.
-// import playerReducers from './players/action.reducers'
+import bitLinksReducers from './BitLinks/action/reducers';
 
 const appReducers: AppReducers = extend({},
   // register your reducers here.
-  // playerReducers,
-);
+  bitLinksReducers,
+) as AppReducers;
 
 export default combineAllReducers(appReducers);
