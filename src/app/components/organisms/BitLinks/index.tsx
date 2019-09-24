@@ -64,7 +64,6 @@ class BitLinks extends React.Component<Props, State> {
         />
         <LinkList
           links={links}
-          fetching={fetching}
         />
         {error ? (
           <ErrorNotification error={error} onHide={hideError} />

@@ -8,12 +8,10 @@ import * as Style from './style';
 
 export interface Props {
   links: Link[],
-  fetching?: boolean,
 };
 
 const LinkList: React.FC<Props> = ({
   links,
-  fetching,
 }) => (
   <Style.Wrapper>
     {links.length ? (
