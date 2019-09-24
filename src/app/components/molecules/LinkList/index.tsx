@@ -1,5 +1,7 @@
 import React from 'react';
 import { Callout } from 'react-foundation';
+import ReactTooltip from 'react-tooltip';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import { Link } from 'app/store/BitLinks/types';
 import ExternalLink from 'app/components/atoms/ExternalLink';
 import * as Style from './style';
@@ -29,10 +31,23 @@ const LinkList: React.FC<Props> = ({
                 <ExternalLink href={link.shortUrl}>
                   {link.shortUrl}
                 </ExternalLink>
+                <CopyToClipboard
+                  text={link.shortUrl}
+                  data-tip="copy"
+                  data-for="tooltipCopy"
+                >
+                  <Style.ClipboardIcon />
+                </CopyToClipboard>
+                <ReactTooltip
+                  id="tooltipCopy"
+                  aria-haspopup="true"
+                  effect="solid"
+                  place="right"
+                />
               </Style.ShortUrl>
               <Style.Clicks>
                 {link.clicks || 0}
-                <Style.Icon />
+                <Style.ClicksIcon />
               </Style.Clicks>
             </Style.FlexRow>
           </Style.Link>
@@ -40,6 +55,6 @@ const LinkList: React.FC<Props> = ({
       </Callout>
     ) : null}
   </Style.Wrapper>
-);
+)
 
 export default LinkList;

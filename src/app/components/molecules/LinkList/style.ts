@@ -64,6 +64,16 @@ export const ShortUrl = styled.div`
   }
 `;
 
+export const ClipboardIcon = styled.span`
+  margin-left: ${rem(6)};
+  font-size: ${rem(12)};
+  font-family: "Bitly Icon";
+  cursor: pointer;
+  :after {
+    content: "\\E60B";
+  }
+`;
+
 export const Clicks = styled.div`
   overflow: hidden;
   white-space: nowrap;
@@ -73,7 +83,7 @@ export const Clicks = styled.div`
   line-height: ${rem(12)};
 `;
 
-export const Icon = styled.span`
+export const ClicksIcon = styled.span`
   margin-left: ${rem(6)};
   font-size: ${rem(12)};
   font-family: "Bitly Icon";
