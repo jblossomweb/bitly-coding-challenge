@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface Props {
   href: string,
-  children: Element | string,
+  children: JSX.Element | string,
 }
 
 const ExternalLink: React.FC<Props> = ({ href, children }) => (

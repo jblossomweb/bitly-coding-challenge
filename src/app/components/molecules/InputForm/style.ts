@@ -15,6 +15,9 @@ export const Wrapper = styled.div`
     border ${rem(1)} solid ${palette.orangeText};
     background-color: ${palette.lightOrange};
   }
+  input[disabled] {
+    opacity: .666;
+  }
   button {
     min-width: ${rem(96)};
     border-radius: 0 ${rem(4)} ${rem(4)} 0;

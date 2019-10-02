@@ -16,7 +16,7 @@ export type LinkUrls = Link['shortUrl'][];
 export type ImmutableLinks = Immutable.Map<string, Link>;
 
 export interface FormattedError {
-  code: number,
+  code?: number,
   message: string,
 };
 
