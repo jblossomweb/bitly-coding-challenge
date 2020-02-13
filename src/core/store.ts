@@ -15,9 +15,11 @@ import {
 import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
 import thunk from 'redux-thunk';
 import { combineReducers } from 'redux-immutable';
+import throttle from 'lodash/throttle';
 
 import config from '../app/config';
 import getHistory from './history';
+import { loadState, saveState } from './localStorage';
 
 export type AppState = Map<string, any>;
 export type AppReducer = Reducer<AppState, AnyAction>;
@@ -26,7 +28,7 @@ export interface AppReducers {
   [key: string]: AppReducer,
 };
 
-export const getInitialState: () => AppState = () => Map(fromJS({
+export const getInitialState: () => AppState = () => loadState() || Map(fromJS({
   app: {}
 }));
 
@@ -73,8 +75,16 @@ const composedEnhancers = fromJS(compose(
 export const composeStore = (
   initialState: AppState,
   appReducers: any,
-): Store<AppState> => createStore(
-  appReducers,
-  initialState,
-  composedEnhancers,
-);
+): Store<AppState> => {
+  const store = createStore(
+    appReducers,
+    initialState,
+    composedEnhancers,
+  );
+  store.subscribe(throttle(() => {
+    saveState(fromJS({
+      app: store.getState().get('app')
+    }));
+  }, 1000));
+  return store;
+}

@@ -1,7 +1,8 @@
 import { RouteProps } from 'react-router-dom';
 
-import NotFound from './components/pages/NotFound';
+import Home from './components/pages/Home';
 import Sample from './components/pages/Sample';
+import NotFound from './components/pages/NotFound';
 
 export interface Route {
   path: string,
@@ -16,6 +17,10 @@ export interface Redirect {
 export const routes: Route[] = [
   {
     path: `/home`,
+    page: Home,
+  },
+  {
+    path: `/sample`,
     page: Sample,
   },
   {

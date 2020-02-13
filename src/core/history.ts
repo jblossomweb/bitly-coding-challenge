@@ -1,5 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
-import { History } from 'history';
+import { History, createBrowserHistory } from 'history';
 
 let history: History | null = null;
 
